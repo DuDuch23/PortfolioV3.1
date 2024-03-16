@@ -8,17 +8,18 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: AdminRepository::class)]
+#[ORM\Table(name: 'Admin')]
 class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
+    #[ORM\Column(type: 'string', length: 180, unique: true)]
     private ?string $email = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'array')]
     private array $roles = [];
 
     /**
