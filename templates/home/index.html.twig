@@ -22,7 +22,7 @@
         </div>
         <div class="presentation">
             {% if is_granted('ROLE_SUPER_ADMIN') %}
-            <div class="pdp">
+            <div class="pdp img-pdp-admin">
                 <a href="#">
                     <img class="img-pdp" src="{{ asset('media/photo-de-profil.jfif') }}">
                 </a>
@@ -111,7 +111,19 @@
         <div class="titre">
             <h1>Me contacter</h1>
         </div>
-        {{ form(form) }}
+            {{ form_start(form) }}
+            <div class="content-input">
+                <div id="nom-prenom">
+                    {{ form_row(form.nom) }}
+                    {{ form_row(form.prenom) }}
+                </div>
+                <div id="email-sujet">
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.sujet) }}
+                </div>
+            </div>
+            {{ form_row(form.submit) }}
+        </div>
     </div>
 </section>
 
