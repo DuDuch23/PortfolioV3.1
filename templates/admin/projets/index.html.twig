@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Backoffice projets{% endblock %}
+
+{% block body %}
+
+{{ include("./components/navbar_admin.html.twig") }}
+<div id="bloc-projets">
+    <div class="content-projets-admin">
+        {% for projet in projets %}
+        <div class="content_projet">
+            <div class="projet">
+                <p>{{ projet.nom }}</p>
+                <div class="content_image_projet">
+                    <img class="image_projet" src="{{ asset('media/' ~ projet.imageProjet) }}" alt="{{ projet.alt }}">
+                </div>
+            </div>
+            <div class="content-supprimer-modifier">
+                
+            </div>
+        </div>
+        {% endfor %}
+        <div class="nouveau-projet">
+
+        </div>
+    </div>
+</div>
+{% endblock %}

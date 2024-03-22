@@ -30,6 +30,7 @@ class ContactType extends AbstractType
                     'id' => 'nom',
                     'placeholder' => 'Nom',
                 ],
+                'label' => false,
                 'required' => true,
                 'row_attr' => [
                     'class' => 'form-row',
@@ -42,6 +43,7 @@ class ContactType extends AbstractType
                     'id' => 'prenom',
                     'placeholder' => 'Prénom',
                 ],
+                'label' => false,
                 'required' => true,
                 'row_attr' => [
                     'class' => 'form-row',
@@ -54,6 +56,7 @@ class ContactType extends AbstractType
                     'id' => 'email',
                     'placeholder' => 'Email',
                 ],
+                'label' => false,
                 'required' => true,
                 'row_attr' => [
                     'class' => 'form-row',
@@ -67,6 +70,7 @@ class ContactType extends AbstractType
                     Constant::AUTRE => Constant::AUTRE,
                     Constant::NULL => Constant::NULL,
                 ],
+                'label' => false,
                 'attr' => [
                     'class' => 'form-control',
                     'id' => 'sujet',
@@ -84,6 +88,7 @@ class ContactType extends AbstractType
                     'id' => 'contenu',
                     'placeholder' => 'Contenu',
                 ],
+                'label' => false,
                 'required' => true,
                 'row_attr' => [
                     'class' => 'form-row',
@@ -91,7 +96,10 @@ class ContactType extends AbstractType
             ])
 
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer'
+                'label' => 'Envoyer',
+                'row_attr' => [
+                    'class' => 'form-submit',
+                ],
             ]);
         ;
     }

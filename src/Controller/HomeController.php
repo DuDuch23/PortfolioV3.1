@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'index')]
+    #[Route('/', name: 'home')]
     public function index(ProjetRepository $projetRepository,
     TimelineRepository $timelineRepository,
     Request $request,

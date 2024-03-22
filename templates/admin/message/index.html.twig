@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+{{ include("./components/navbar_admin.html.twig") }}
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Sujet</th>
+            <th>Contenu</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message.nom }}</td>
+            <td>{{ message.prenom }}</td>
+            <td>{{ message.email }}</td>
+            <td>{{ message.sujet }}</td>
+            <td>{{ message.contenu }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

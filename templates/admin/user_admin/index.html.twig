@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserAdminController!{% endblock %}
+
+{% block body %}
+
+{{ include("./components/navbar_admin.html.twig") }}
+
+{% for admin in admins %}
+<p>{{ admin.email }}</p>
+{% if admin.roles is not empty %}
+        <ul>
+            {% for role in admin.roles %}
+                <li>{{ role }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun rôle spécifié</p>
+    {% endif %}
+{% endfor %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.prenom }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+            {% if user.roles is not empty %}
+                <ul>
+                    {% for role in user.roles %}
+                        <li>{{ role }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

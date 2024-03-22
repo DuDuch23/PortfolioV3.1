@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TimelineController!{% endblock %}
+
+{% block body %}
+
+{{ include("./components/navbar_admin.html.twig") }}
+
+{% for timeline in timelines %}
+<p>{{ timeline.nomTechnoId.nom }}</p>
+<p>{{ timeline.date|date('Y') }}</p>
+<p>{{ timeline.description }}</p>
+<p>{{ timeline.alt }}</p>
+{% endfor %}
+
+{% endblock %}

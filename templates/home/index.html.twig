@@ -13,6 +13,14 @@
             <li><a href="#bloc-contact">Me contacter</a></li>
         </ul>
     </nav>
+    {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+    <div class="logout">
+        <a href="{{ path('logout') }}">
+           <img class="" src="{{ asset('media/deconnexion.png') }}"> 
+        </a>
+    </div>
+    {% else %}
+    {% endif %}
 </header>
 
 <section id="bloc-accueil">
@@ -23,8 +31,8 @@
         <div class="presentation">
             {% if is_granted('ROLE_SUPER_ADMIN') %}
             <div class="pdp img-pdp-admin">
-                <a href="#">
-                    <img class="img-pdp" src="{{ asset('media/photo-de-profil.jfif') }}">
+                <a href="{{ path('login') }}">
+                    <img class="img-pdp" src="{{ asset('media/pdp.jpg') }}">
                 </a>
             </div>
             {% else %}
@@ -86,18 +94,21 @@
         </div>
         <div id="timeline">
             <div id="container-timeline">
-                <span class="trait"></span>
+                <span class="disabled-trait"></span>
                 {% for timeline in timelines %}
                     <div class="timeline-item">
-                        <div class="timeline-item-date">
-                            <p class="date">{{ timeline.date|date('Y') }}</p>
-                        </div>
-                        <div class="timeline-item-content">
-                            <div class="timeline-item-content-logo">
-                                <img src="{{ asset('media/' ~ timeline.nomTechnoId.image) }}" alt="{{ timeline.alt }}" class="img-lang">
+                        <div class="timeline-content">
+                            <div class="timeline-item-date-techno">
+                                <p class="date">{{ timeline.date|date('Y') }}</p>
+                                <div class="timeline-item-image-techno">
+                                    <img src="{{ asset('media/' ~ timeline.nomTechnoId.image) }}" alt="{{ timeline.alt }}" class="img-lang">
+                                </div>
+                                <h3 class="timeline-item-nom-techno">{{ timeline.nomTechnoId.nom }}</h3>
                             </div>
-                            <h3 class="timeline-item-titre">{{ timeline.nomTechnoId.nom }}</h3>
-                            <p class="timeline-item-texte"><?php echo $timeline['texte_timeline']; ?></p>
+                            
+                            <div class="timeline-item-description">
+                                <p class="timeline-item-description">{{ timeline.description }}</p>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
@@ -111,18 +122,27 @@
         <div class="titre">
             <h1>Me contacter</h1>
         </div>
-            {{ form_start(form) }}
-            <div class="content-input">
-                <div id="nom-prenom">
-                    {{ form_row(form.nom) }}
-                    {{ form_row(form.prenom) }}
+            <div class="content-form-contact">
+                {{ form_start(form) }}
+                <div class="content-input">
+                    <div id="nom-prenom">
+                        {{ form_row(form.nom) }}
+                        {{ form_row(form.prenom) }}
+                    </div>
+                    <div id="email-sujet">
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.sujet) }}
+                    </div>
                 </div>
-                <div id="email-sujet">
-                    {{ form_row(form.email) }}
-                    {{ form_row(form.sujet) }}
-                </div>
+                {{ form_row(form.submit) }}
             </div>
-            {{ form_row(form.submit) }}
+            <div class="drops">
+                <div class="drop drop-1"></div>
+                <div class="drop drop-2"></div>
+                <div class="drop drop-3"></div>
+                <div class="drop drop-4"></div>
+                <div class="drop drop-5"></div>
+            </div>
         </div>
     </div>
 </section>
