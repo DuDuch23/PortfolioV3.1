@@ -19,7 +19,6 @@
            <img class="" src="{{ asset('media/deconnexion.png') }}"> 
         </a>
     </div>
-    {% else %}
     {% endif %}
 </header>
 
@@ -133,15 +132,18 @@
                         {{ form_row(form.email) }}
                         {{ form_row(form.sujet) }}
                     </div>
+                    <div id="contenu">
+                        {{ form_row(form.contenu) }}
+                    </div>
                 </div>
                 {{ form_row(form.submit) }}
             </div>
             <div class="drops">
-                <div class="drop drop-1"></div>
-                <div class="drop drop-2"></div>
-                <div class="drop drop-3"></div>
-                <div class="drop drop-4"></div>
-                <div class="drop drop-5"></div>
+                <div class="drop drop-1 moveContentPortfolioDown movedown"></div>
+                <div class="drop drop-2 moveContentPortfolioUp movedown"></div>
+                <div class="drop drop-3 moveContentPortfolioDown movedown"></div>
+                <div class="drop drop-4 moveContentPortfolioUp moveup"></div>
+                <div class="drop drop-5 moveContentPortfolioDown moveup"></div>
             </div>
         </div>
     </div>

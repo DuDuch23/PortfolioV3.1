@@ -8,4 +8,11 @@
             <li><a href="{{ path('admin_messages_liste') }}">Me contacter</a></li>
         </ul>
     </nav>
+    {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+    <div class="logout">
+        <a href="{{ path('logout') }}">
+           <img class="" src="{{ asset('media/deconnexion.png') }}"> 
+        </a>
+    </div>
+    {% endif %}
 </header>
