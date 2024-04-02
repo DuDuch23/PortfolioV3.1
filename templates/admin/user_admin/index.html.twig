@@ -6,19 +6,6 @@
 
 {{ include("./components/navbar_admin.html.twig") }}
 
-{% for admin in admins %}
-<p>{{ admin.email }}</p>
-{% if admin.roles is not empty %}
-        <ul>
-            {% for role in admin.roles %}
-                <li>{{ role }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Aucun rôle spécifié</p>
-    {% endif %}
-{% endfor %}
-
 <table>
     <thead>
         <tr>

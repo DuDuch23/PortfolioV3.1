@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un projet{% endblock %}
+
+{% block body %}
+
+{% include "./components/navbar_admin.html.twig" %}
+<div>
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+</div>
+<form action="{{ path('admin_projets_liste') }}">
+    <input class="btn" type="submit" value="Retour à la liste">
+</form>
+{% endblock %}

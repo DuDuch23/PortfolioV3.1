@@ -15,13 +15,27 @@
                     <img class="image_projet" src="{{ asset('media/' ~ projet.imageProjet) }}" alt="{{ projet.alt }}">
                 </div>
             </div>
-            <div class="content-supprimer-modifier">
-                
+            <div class="content-edit-delete">
+                <div class="content-edit">
+                    <a href="{{ path('admin_projets_edit', {id: projet.id}) }}" method="post" value="Modifier">
+                        
+                        <p>Modifier</p>
+                    </a>
+                </div>
+                <div class="content-delete">
+                    <form action="{{ path('admin_projets_delete', {id: projet.id}) }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token('delete-projet') }}">
+                        <input class="btn" type="submit" value="Supprimer">
+                    </form>
+                </div>
             </div>
         </div>
         {% endfor %}
-        <div class="nouveau-projet">
-
+        <div class="content_projet">
+            <form class="form-group" action="{{ path('admin_projets_add') }}" method="post">
+                <input class="btn btn-add" type="submit" value="Ajouter +">
+            </form>
         </div>
     </div>
 </div>

@@ -63,7 +63,7 @@ class ContactType extends AbstractType
                 ]
             ])
 
-            ->add('sujet', ChoiceType::class, [
+            ->add('sujet', ChoiceType::class, [ 
                 'choices' => [
                     Constant::DEMANDEPARTENARIAT => Constant::DEMANDEPARTENARIAT,
                     Constant::DEMANDEOFFRE => Constant::DEMANDEOFFRE,
@@ -96,6 +96,9 @@ class ContactType extends AbstractType
             ])
 
             ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn',
+                ],
                 'label' => 'Envoyer',
                 'row_attr' => [
                     'class' => 'form-submit',

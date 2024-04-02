@@ -40,7 +40,7 @@ class Projet
     private ?string $lien_github = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image_aperçu = null;
+    private ?string $image_apercu = null;
 
     public function getId(): ?int
     {
@@ -143,14 +143,14 @@ class Projet
         return $this;
     }
 
-    public function getImageAperçu(): ?string
+    public function getImageApercu(): ?string
     {
-        return $this->image_aperçu;
+        return $this->image_apercu;
     }
 
-    public function setImageAperçu(string $image_aperçu): static
+    public function setImageApercu(string $image_apercu): static
     {
-        $this->image_aperçu = $image_aperçu;
+        $this->image_apercu = $image_apercu;
 
         return $this;
     }

@@ -10,3 +10,8 @@ admin_controllers:
         namespace: App\Controller\Admin
     prefix: 'admin'
     type: attribute
+
+delete:
+    path: delete/{id}
+    controller: App\Controller\Admin\ProjetsController
+    methods: ["POST"]

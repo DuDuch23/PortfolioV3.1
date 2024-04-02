@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un utilisateur{% endblock %}
+
+{% block body %}
+
+{% include "./components/navbar_admin.html.twig" %}
+<div>
+    <h1>Modification du projet {{ projet.nom }}</h1>
+</div>
+<div>
+    {{ form_start(form) }}
+</div>
+{% endblock %}

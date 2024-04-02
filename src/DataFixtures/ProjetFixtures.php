@@ -18,7 +18,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             'temps_realisation' => '1 semaine',
             'lien' => './projets/Projet_1_cv/CV-Alex-Johnson.html',
             'lien_github' => 'https://github.com/DuDuch23/Projet-1-cv.git',
-            'image_aperçu' => 'Alex-Johnson.PNG',
+            'image_apercu' => 'Alex-Johnson.PNG',
         ],
         [
             'nom' => 'Cv Alex Johnson',
@@ -28,7 +28,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             'temps_realisation' => '1 semaine',
             'lien' => './projets/Projet_1_cv/CV-Alex-Johnson.html',
             'lien_github' => 'https://github.com/DuDuch23/Projet-1-cv.git',
-            'image_aperçu' => 'Alex-Johnson.PNG',
+            'image_apercu' => 'Alex-Johnson.PNG',
         ],
         [
             'nom' => 'Cv Alex Johnson',
@@ -38,7 +38,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             'temps_realisation' => '1 semaine',
             'lien' => './projets/Projet_1_cv/CV-Alex-Johnson.html',
             'lien_github' => 'https://github.com/DuDuch23/Projet-1-cv.git',
-            'image_aperçu' => 'Alex-Johnson.PNG',
+            'image_apercu' => 'Alex-Johnson.PNG',
         ],
         [
             'nom' => 'Cv Alex Johnson',
@@ -48,7 +48,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             'temps_realisation' => '1 semaine',
             'lien' => './projets/Projet_1_cv/CV-Alex-Johnson.html',
             'lien_github' => 'https://github.com/DuDuch23/Projet-1-cv.git',
-            'image_aperçu' => 'Alex-Johnson.PNG',
+            'image_apercu' => 'Alex-Johnson.PNG',
         ],
         [
             'nom' => 'Cv Alex Johnson',
@@ -58,7 +58,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             'temps_realisation' => '1 semaine',
             'lien' => './projets/Projet_1_cv/CV-Alex-Johnson.html',
             'lien_github' => 'https://github.com/DuDuch23/Projet-1-cv.git',
-            'image_aperçu' => 'Alex-Johnson.PNG',
+            'image_apercu' => 'Alex-Johnson.PNG',
         ],
     ];
 
@@ -79,7 +79,7 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             $projet->setTempsRealisation($attributes['temps_realisation']);
             $projet->setLien($attributes['lien']);
             $projet->setLienGithub($attributes['lien_github']);
-            $projet->setImageAperçu($attributes['image_aperçu']);
+            $projet->setImageApercu($attributes['image_apercu']);
 
             $manager->persist($projet);
         }
