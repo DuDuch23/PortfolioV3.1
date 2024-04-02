@@ -240,7 +240,7 @@ header{
 }
 
 .image_projet{
-    width: 100%;
+    width: clamp(80%, 1vw, 10%);
     height: 100%;
 }
 
