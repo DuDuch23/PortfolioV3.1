@@ -1,0 +1,20 @@
+vich_uploader:
+    db_driver: orm
+    metadata: 
+        type: attribute
+
+    mappings:
+        projet_image:
+            uri_prefix: /images/projets/principale
+            upload_destination: '%kernel.project_dir%/public/images/projets/principale'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        projet_apercu:
+            uri_prefix: /images/projets/apercu
+            upload_destination: '%kernel.project_dir%/public/images/projets/apercu'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            
+        timeline_image:
+            uri_prefix: /images/timeline
+            upload_destination: '%kernel.project_dir%/public/images/timelines'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

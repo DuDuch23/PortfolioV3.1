@@ -12,11 +12,14 @@
             <div class="projet">
                 <p>{{ projet.nom }}</p>
                 <div class="content_image_projet">
-                    <img class="image_projet" src="{{ asset('media/' ~ projet.imageProjet) }}" alt="{{ projet.alt }}">
+                    <img class="image_projet" src="{{ vich_uploader_asset(projet, 'imageFileProjet') }}" alt="{{ projet.alt }}">
                 </div>
             </div>
             <div class="content-edit-delete">
                 <div class="content-edit">
+                    <form action="{{ path('admin_projets_edit', {id: projet.id}) }}" method="post" value="Modifier">
+                        <input class="btn" type="submit" value="Modifier">
+                    </form>
                     <a href="{{ path('admin_projets_edit', {id: projet.id}) }}" method="post" value="Modifier">
                         
                         <p>Modifier</p>

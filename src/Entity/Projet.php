@@ -5,8 +5,11 @@ namespace App\Entity;
 use App\Repository\ProjetRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProjetRepository::class)]
+#[Vich\Uploadable]
 class Projet
 {
     #[ORM\Id]
@@ -24,8 +27,11 @@ class Projet
     #[ORM\JoinColumn(nullable: false)]
     private ?Techno $techno_id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image_projet = null;
+    #[Vich\UploadableField(mapping: 'projet_image', fileNameProperty: 'imageNameProjet')]
+    private ?File $imageFileProjet = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageNameProjet = null;
 
     #[ORM\Column(length: 255)]
     private ?string $alt = null;
@@ -39,8 +45,11 @@ class Projet
     #[ORM\Column(type: Types::TEXT)]
     private ?string $lien_github = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image_apercu = null;
+    #[Vich\UploadableField(mapping: 'projet_apercu', fileNameProperty: 'imageNameProjetApercu')]
+    private ?File $imageFileProjetApercu = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageNameProjetApercu = null;
 
     public function getId(): ?int
     {
@@ -83,16 +92,34 @@ class Projet
         return $this;
     }
 
-    public function getImageProjet(): ?string
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFileProjet
+     */
+
+    public function setImageFileProjet(?File $imageFileProjet = null): void
     {
-        return $this->image_projet;
+        $this->imageFileProjet = $imageFileProjet;
     }
 
-    public function setImageProjet(string $image_projet): static
+    public function getImageFileProjet(): ?File
     {
-        $this->image_projet = $image_projet;
+        return $this->imageFileProjet;
+    }
 
-        return $this;
+    public function setImageNameProjet(?string $imageNameProjet): void
+    {
+        $this->imageNameProjet = $imageNameProjet;
+    }
+
+    public function getImageNameProjet(): ?string
+    {
+        return $this->imageNameProjet;
     }
 
     public function getAlt(): ?string
@@ -143,15 +170,32 @@ class Projet
         return $this;
     }
 
-    public function getImageApercu(): ?string
+     /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFileProjetApercu
+     */
+    public function setImageFileProjetApercu(?File $imageFileProjetApercu = null): void
     {
-        return $this->image_apercu;
+        $this->imageFileProjetApercu = $imageFileProjetApercu;
     }
 
-    public function setImageApercu(string $image_apercu): static
+    public function getImageFileProjetApercu(): ?File
     {
-        $this->image_apercu = $image_apercu;
+        return $this->imageFileProjetApercu;
+    }
 
-        return $this;
+    public function setImageNameProjetApercu(?string $imageNameProjetApercu): void
+    {
+        $this->imageNameProjetApercu = $imageNameProjetApercu;
+    }
+
+    public function getImageNameProjetApercu(): ?string
+    {
+        return $this->imageNameProjetApercu;
     }
 }

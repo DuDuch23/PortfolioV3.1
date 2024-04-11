@@ -7,11 +7,15 @@ use App\Entity\Techno;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProjetType extends AbstractType
 {
@@ -30,7 +34,8 @@ class ProjetType extends AbstractType
                 ],
                 'required' => true,
             ])
-            ->add('image_projet', FileType::class, [
+            ->add('imageFileProjet', VichImageType::class, [
+                'label' => 'Image de présentation',
                 'attr' => [
                     'class' => 'form-control',
                 ],
@@ -60,7 +65,8 @@ class ProjetType extends AbstractType
                 ],
                 'required' => true,
             ])
-            ->add('image_apercu', FileType::class, [
+            ->add('imageFileProjetApercu', VichFileType::class, [
+                'label' => 'Aperçu du projet',
                 'attr' => [
                     'class' => 'form-control',
                 ],
@@ -70,6 +76,15 @@ class ProjetType extends AbstractType
                 'class' => Techno::class,
                 'choice_label' => 'id',
             ])
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn',
+                ],
+                'label' => 'Envoyer',
+                'row_attr' => [
+                    'class' => 'form-submit',
+                ],
+            ]);
         ;
     }
 
