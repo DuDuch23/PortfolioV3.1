@@ -206,6 +206,7 @@ header{
 }
 
 #bloc-projets{
+    margin: 0 100px;
     display: flex;
     justify-content: center;
 }
@@ -229,11 +230,11 @@ header{
 .content_projet:hover {
     border: 2px solid #fff;
     box-shadow: 0 0 8px #fff, inset 0 0 8px #fff, 0 0 16px #2EC, inset 0 0 16px #2EC, 0 0 32px #1237E9, inset 0 0 32px #1237E9;
-    transition: all 200ms ease-in-out linear,;
+    transition: all 200ms ease-in-out;
 }
 
 .projet{
-    width: 50%;
+    width: 100%;
 }
 
 .container_image_projet{
@@ -561,4 +562,9 @@ th{
 
 td{
     padding: 10px 40px;
+}
+
+.content-edit-delete{
+    display: flex;
+    justify-content: space-around;
 }
