@@ -30,6 +30,7 @@ class ProjetsController extends AbstractController
     {
         $projet = new Projet();
         $form = $this->createForm(ProjetType::class, $projet);
+        $form->createView()->vars['attr']['class'] = 'w-3/5';
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
@@ -55,7 +56,6 @@ class ProjetsController extends AbstractController
         $form = $this->createForm(ProjetType::class, $projet, [
             'method' => 'POST',
         ]);
-
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
@@ -69,8 +69,11 @@ class ProjetsController extends AbstractController
             $this->addFlash('error', 'Le formulaire contient des erreurs');
         }
 
+        $view = $form->createView();
+        $view->vars['attr']['class'] = 'w-8/12 flex justify-center';
+
         return $this->render('admin/projets/edit.html.twig', [
-            'form' => $form,
+            'form' => $view,
             'projet' => $projet,
         ]);
     }

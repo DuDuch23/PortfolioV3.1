@@ -45,6 +45,9 @@ class ProjetType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
+                'row_attr' => [
+                    'class' => 'grid',
+                ],
                 'required' => true,
             ])
             ->add('temps_realisation', TextType::class, [
@@ -57,11 +60,17 @@ class ProjetType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
+                'row_attr' => [
+                    'class' => 'grid',
+                ],
                 'required' => true,
             ])
             ->add('lien_github', UrlType::class, [
                 'attr' => [
                     'class' => 'form-control',
+                ],
+                'row_attr' => [
+                    'class' => 'grid',
                 ],
                 'required' => true,
             ])
@@ -75,6 +84,9 @@ class ProjetType extends AbstractType
             ->add('techno_id', EntityType::class, [
                 'class' => Techno::class,
                 'choice_label' => 'id',
+                'row_attr' => [
+                    'class' => 'grid',
+                ],
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [

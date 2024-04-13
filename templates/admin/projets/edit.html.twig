@@ -8,7 +8,31 @@
 <div>
     <h1>Modification du projet {{ projet.nom }}</h1>
 </div>
-<div>
+<div class="form-edit flex justify-center">
     {{ form_start(form) }}
+    <div class="nom">
+        {{ form_row(form.nom) }}
+    </div>
+    <div class="content-img-principal-img-apercu">
+        <div class="img-principale">
+            {{ form_row(form.imageFileProjet) }}
+            {{ form_row(form.alt) }}
+        </div>
+        <div class="img-apercu">
+            {{ form_row(form.imageFileProjetApercu) }}
+            <p>à mettre alt pour imageFileProjetApercu</p>
+        </div>
+    </div>
+    <div>
+        <div class="tmp-realisation">
+            {{ form_row(form.temps_realisation) }}
+            {{ form_row(form.techno_id) }}
+        </div>
+        <div class="link">
+            {{ form_row(form.lien) }}
+            {{ form_row(form.lien_github) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
 </div>
 {% endblock %}
