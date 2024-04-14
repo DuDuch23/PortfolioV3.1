@@ -70,7 +70,7 @@ class ProjetType extends AbstractType
                     'class' => 'form-control',
                 ],
                 'row_attr' => [
-                    'class' => 'grid',
+                    'class' => 'grid w-50',
                 ],
                 'required' => true,
             ])

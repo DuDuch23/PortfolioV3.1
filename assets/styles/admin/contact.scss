@@ -1,0 +1,17 @@
+table{
+    width: 100%;
+    color: white;
+}
+
+th{
+    border: 2px solid;
+}
+
+td{
+    padding: 10px 40px;
+}
+
+.content-edit-delete{
+    display: flex;
+    justify-content: space-around;
+}

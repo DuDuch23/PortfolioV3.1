@@ -3,25 +3,8 @@
 {% block title %}Portfolio Alexandre Duchemin{% endblock %}
 
 {% block body %}
-<header>
-    <nav class="container-navbar">
-        <ul class="navbar">
-            <li><a href="#bloc-accueil">Accueil</a></li>
-            <li><a href="#bloc-certification">Certifications</a></li>
-            <li><a href="#bloc-projets">Projets</a></li>
-            <li><a href="#bloc-timeline">Timeline</a></li>
-            <li><a href="#bloc-contact">Me contacter</a></li>
-        </ul>
-    </nav>
-    {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
-    <div class="logout">
-        <a href="{{ path('logout') }}">
-           <img class="" src="{{ asset('media/deconnexion.png') }}"> 
-        </a>
-    </div>
-    {% endif %}
-</header>
 
+{{ include("./components/navbar_admin.html.twig") }}
 <section id="bloc-accueil">
     <div class="wrapper">
         <div class="titre">
@@ -30,7 +13,7 @@
         <div class="presentation">
             {% if is_granted('ROLE_SUPER_ADMIN') %}
             <div class="pdp img-pdp-admin">
-                <a href="{{ path('login') }}">
+                <a href="{{ path('admin_projets_liste') }}">
                     <img class="img-pdp" src="{{ asset('media/pdp.jpg') }}">
                 </a>
             </div>
@@ -47,7 +30,7 @@
                 <p class="presentation-text">En BTS SIO (Services Informatiques aux Organisations) à Saint-Vincent de Senlis</p>
             </div>
             <div id="cv">
-                <a href="#">Télécharger mon cv</a>
+                <a class="btn" href="#">Télécharger mon cv</a>
             </div>
         </div>
     </div>

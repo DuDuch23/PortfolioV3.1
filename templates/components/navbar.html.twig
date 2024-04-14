@@ -1,0 +1,18 @@
+<header>
+    <nav class="container-navbar">
+        <ul class="navbar">
+            <li><a href="#bloc-accueil">Accueil</a></li>
+            <li><a href="#bloc-certification">Certifications</a></li>
+            <li><a href="#bloc-projets">Projets</a></li>
+            <li><a href="#bloc-timeline">Timeline</a></li>
+            <li><a href="#bloc-contact">Me contacter</a></li>
+        </ul>
+    </nav>
+    {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+    <div class="logout">
+        <a href="{{ path('logout') }}">
+           <img class="" src="{{ asset('media/deconnexion.png') }}"> 
+        </a>
+    </div>
+    {% endif %}
+</header>
