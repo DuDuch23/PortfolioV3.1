@@ -74,12 +74,12 @@ class ProjetFixtures extends Fixture implements DependentFixtureInterface
             $projet->setTechnoId($techno);
             $projet->setNom($attributes['nom']);
             $projet->setDescription($attributes['description']);
-            $projet->setImageProjet($attributes['image_projet']);
+            $projet->setImageFileProjet($attributes['image_projet']);
             $projet->setAlt($attributes['alt']);
             $projet->setTempsRealisation($attributes['temps_realisation']);
             $projet->setLien($attributes['lien']);
             $projet->setLienGithub($attributes['lien_github']);
-            $projet->setImageApercu($attributes['image_apercu']);
+            $projet->setImageFileProjetApercu($attributes['image_apercu']);
 
             $manager->persist($projet);
         }
