@@ -9,6 +9,7 @@ use App\Repository\TimelineRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,5 +52,14 @@ class HomeController extends AbstractController
             'timelines' => $timelines,
             'form' => $form->createView(),
         ]);
+    }
+
+    #[Route(path: '/projet/{id}/fiche_projet', name: 'fiche_projet', methods: "GET")]
+    public function ficheProjetPopup($id, ProjetRepository $projetRepository)
+    {
+        // Récupérer les informations du projet en fonction de son ID
+        $projet = $projetRepository->find($id);
+
+        return $this->json($projet);
     }
 }

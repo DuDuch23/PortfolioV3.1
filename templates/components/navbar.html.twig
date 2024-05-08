@@ -1,11 +1,11 @@
-<header>
-    <nav class="container-navbar">
-        <ul class="navbar">
-            <li><a href="#bloc-accueil">Accueil</a></li>
-            <li><a href="#bloc-certification">Certifications</a></li>
-            <li><a href="#bloc-projets">Projets</a></li>
-            <li><a href="#bloc-timeline">Timeline</a></li>
-            <li><a href="#bloc-contact">Me contacter</a></li>
+<header class="w-full flex justify-center">
+    <nav class="container-navbar h-full w-full m-0 p-0">
+        <ul class="navbar sm:flex justify-around items-center h-full w-full">
+            <li class="w-full h-full"><a href="#bloc-accueil" class="w-full h-full flex items-center justify-center list-none">Accueil</a></li>
+            <li class="w-full h-full"><a href="#bloc-certification" class="w-full h-full flex items-center justify-center list-none">Certifications</a></li>
+            <li class="w-full h-full"><a href="#bloc-projets" class="w-full h-full flex items-center justify-center list-none">Projets</a></li>
+            <li class="w-full h-full"><a href="#bloc-timeline" class="w-full h-full flex items-center justify-center list-none">Timeline</a></li>
+            <li class="w-full h-full"><a href="#bloc-contact" class="w-full h-full flex items-center justify-center list-none">Me contacter</a></li>
         </ul>
     </nav>
     {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}

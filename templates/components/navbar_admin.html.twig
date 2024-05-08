@@ -1,11 +1,11 @@
-<header>
-    <nav class="container-navbar">
-        <ul class="navbar">
-            <li><a href="{{ path('admin_admins_liste') }}">Utilisateurs</a></li>
-            <li><a href="#bloc-certification">Certifications</a></li>
-            <li><a href="{{ path('admin_projets_liste') }}">Projets</a></li>
-            <li><a href="{{ path('admin_timelines_liste') }}">Timeline</a></li>
-            <li><a href="{{ path('admin_messages_liste') }}">Me contacter</a></li>
+<header class="w-full flex justify-center">
+    <nav class="container-navbar h-full w-full m-0 p-0">
+        <ul class="navbar sm:flex justify-around items-center h-full w-full">
+            <li class="w-full h-full"><a class="w-full h-full flex items-center justify-center list-none" href="{{ path('admin_admins_liste') }}">Utilisateurs</a></li>
+            <li class="w-full h-full"><a class="w-full h-full flex items-center justify-center list-none" href="#bloc-certification">Certifications</a></li>
+            <li class="w-full h-full"><a class="w-full h-full flex items-center justify-center list-none" href="{{ path('admin_projets_liste') }}">Projets</a></li>
+            <li class="w-full h-full"><a class="w-full h-full flex items-center justify-center list-none" href="{{ path('admin_timelines_liste') }}">Timeline</a></li>
+            <li class="w-full h-full"><a class="w-full h-full flex items-center justify-center list-none" href="{{ path('admin_messages_liste') }}">Me contacter</a></li>
         </ul>
     </nav>
     {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}

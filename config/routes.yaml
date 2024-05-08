@@ -15,3 +15,7 @@ delete:
     path: delete/{id}
     controller: App\Controller\Admin\ProjetsController
     methods: ["POST"]
+
+fiche_popup:
+    path: '/projet/{id}/fiche_projet'
+    controller: 'App\Controller\ProjetController\fichePopup'

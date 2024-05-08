@@ -9,9 +9,9 @@
     <div class="content-projets-admin">
         {% for projet in projets %}
         <div class="content_projet">
-            <div class="projet">
-                <p>{{ projet.nom }}</p>
-                <div class="content_image_projet">
+            <div class="projet grid h-full">
+                <p class="flex items-center text-center justify-center">{{ projet.nom }}</p>
+                <div class="content_image_projet h-4/6 flex justify-center">
                     <img class="image_projet" src="{{ vich_uploader_asset(projet, 'imageFileProjet') }}" alt="{{ projet.alt }}">
                 </div>
                 <div class="content-edit-delete">
