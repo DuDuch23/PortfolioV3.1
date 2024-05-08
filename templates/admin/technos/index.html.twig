@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes des technos{% endblock %}
+
+{% block body %}
+
+{{ include("./components/navbar_admin.html.twig") }}
+<div id="bloc-projets">
+    <div class="content-projets-admin">
+        {% for techno in technos %}
+        <div class="content_projet">
+            <div class="projet grid h-full">
+                <p class="flex items-center text-center justify-center">{{ techno.nom }}</p>
+                <div class="content_image_projet h-4/6 flex justify-center">
+                    <img class="image_projet" src="{{ vich_uploader_asset(techno, 'imageFileTechno') }}" alt="logo language">
+                </div>
+                <div class="content-edit-delete">
+                    <div class="content-edit">
+                        <form action="{{ path('admin_technos_edit', {id: techno.id}) }}" method="post" value="Modifier">
+                            <input class="btn" type="submit" value="Modifier">
+                        </form>
+                        <a href="{{ path('admin_technos_edit', {id: techno.id}) }}" method="post" value="Modifier"></a>
+                    </div>
+                    <div class="content-delete">
+                        <form action="{{ path('admin_technos_delete', {id: techno.id}) }}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token('delete-techno') }}">
+                            <input class="btn" type="submit" value="Supprimer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

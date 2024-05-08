@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une techno{% endblock %}
+
+{% block body %}
+
+{% include "./components/navbar_admin.html.twig" %}
+<div>
+    <h1>Modification de la techno {{ techno.nom }}</h1>
+</div>
+<div class="form-edit flex justify-center">
+    {{ form_start(form) }}
+    <div class="nom">
+        {{ form_row(form.nom) }}
+    </div>
+    <div class="content-img-principal-img-apercu">
+        <div class="img-principale">
+            {{ form_row(form.imageFileTechno) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
