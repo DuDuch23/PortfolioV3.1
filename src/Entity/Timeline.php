@@ -16,7 +16,11 @@ class Timeline
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Techno $nom_techno_id = null;
+    private ?Techno $technoNom = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Techno $technoImage = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
@@ -44,14 +48,26 @@ class Timeline
         return $this;
     }
 
-    public function getNomTechnoId(): ?Techno
+    public function getTechnoNom(): ?Techno
     {
-        return $this->nom_techno_id;
+        return $this->technoNom;
     }
 
-    public function setNomTechnoId(?Techno $nom_techno_id): static
+    public function setTechnoNom(?Techno $technoNom): static
     {
-        $this->nom_techno_id = $nom_techno_id;
+        $this->technoNom = $technoNom;
+
+        return $this;
+    }
+
+    public function getTechnoImage(): ?Techno
+    {
+        return $this->technoImage;
+    }
+
+    public function setTechnoImage(?Techno $technoImage): static
+    {
+        $this->technoImage = $technoImage;
 
         return $this;
     }

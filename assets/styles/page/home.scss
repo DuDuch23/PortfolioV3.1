@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+#nom-prenom{
+    font-family: "Lobster", cursive;
+}
+
 .wrapper{
     width: 100%;
     max-width: 1300px;
@@ -70,13 +74,19 @@
 }
 
 #bloc-projets{
-    margin: 0 100px;
     display: flex;
     justify-content: center;
 }
 
 .content_bloc_projets{
     margin-top: 140px;
+}
+
+.titre_projet{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    border-bottom: solid 1px;
+    height: 85px;
 }
 
 .content_projet{
@@ -98,7 +108,6 @@
 }
 
 .projet{
-    width: 100%;
 }
 
 .container_image_projet{
@@ -209,7 +218,7 @@ form[name="contact"]{
     text-align: center;
 }
 
-#nom-prenom{
+#content-nom-prenom{
     display: flex;
 }
 

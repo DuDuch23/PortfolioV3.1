@@ -85,10 +85,7 @@
                         <div class="timeline-content">
                             <div class="timeline-item-date-techno">
                                 <p class="date">{{ timeline.date|date('Y') }}</p>
-                                <div class="timeline-item-image-techno">
-                                    <img src="{{ asset('media/' ~ timeline.nomTechnoId.image) }}" alt="{{ timeline.alt }}" class="img-lang">
-                                </div>
-                                <h3 class="timeline-item-nom-techno">{{ timeline.nomTechnoId.nom }}</h3>
+                                <h3 class="timeline-item-nom-techno">{{ timeline.technoNom.nom }}</h3>
                             </div>
                             
                             <div class="timeline-item-description">
@@ -110,7 +107,7 @@
             <div class="content-form-contact">
                 {{ form_start(form) }}
                 <div class="content-input">
-                    <div id="nom-prenom">
+                    <div id="content-nom-prenom">
                         {{ form_row(form.nom) }}
                         {{ form_row(form.prenom) }}
                     </div>
