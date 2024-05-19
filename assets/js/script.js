@@ -1,7 +1,6 @@
 $(document).ready(function() {
+    $('body').animate({opacity: '1'}, 1000);
     $('#content_fiche_projet').css({opacity: '0'});
-    $('.presentation-text').css({opacity: '0'});
-    $('.presentation-text').animate({opacity: '1'}, 2000);
     $('.btn_fiche_projet').click(function() {
         $('body').css('overflow-y', 'hidden');
 
@@ -30,7 +29,7 @@ $(document).ready(function() {
                             </div>
                             <!-- Modal body -->
                             <div class="p-4 md:p-5 space-y-4">
-                                <img class="image_projet" src=" ./public/images/projets/apercu/${data.imageNameProjetApercu}" alt="${data.alt}">
+                                <img class="image_projet" src="{{ vich_uploader_asset(projet, 'imageFileProjetApercu') }}" alt="${data.alt}">
                                 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                                     ${data.description}
                                 </p>
@@ -44,7 +43,7 @@ $(document).ready(function() {
                             <!-- Modal footer -->
                             <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                                 <a href="${data.lien}" target="_blank" data-modal-hide="static-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Visiter</a>
-                                <a href="${data.lienGithub}" target="_blank" data-modal-hide="static-modal" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><img src="/public/images/"></a>
+                                <a href="${data.lienGithub}" target="_blank" data-modal-hide="static-modal" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><img src="../public/images/projets/github.png"></a>
                             </div>
                         </div>
                     </div>
@@ -61,7 +60,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.close_fiche_projet', function() {
         $('#content_fiche_projet').animate({opacity: '0'}, 1000);
-        $('#static-modal').remove();
+        // $('#static-modal').remove();
         $('body').css('overflow-y', 'auto');
     });
 });

@@ -116,6 +116,7 @@
 .image_projet{
     width: clamp(80%, 1vw, 10%);
     height: 100%;
+    filter: drop-shadow(10px 8px 4px black);
 }
 
 /*==================
