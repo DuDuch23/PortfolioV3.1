@@ -83,7 +83,7 @@ class ProjetType extends AbstractType
             ])
             ->add('techno_id', EntityType::class, [
                 'class' => Techno::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
                 'row_attr' => [
                     'class' => 'grid',
                 ],
