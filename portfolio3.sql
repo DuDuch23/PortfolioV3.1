@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 20 mai 2024 à 20:00
+-- Généré le : mer. 22 mai 2024 à 00:57
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -144,7 +144,13 @@ INSERT INTO `projet` (`id`, `techno_id_id`, `nom`, `description`, `image_name_pr
 (13, 71, 'CoffeeShop', 'Premier projet d\'intégration sur le framework Symfony. Réalisé sur plusieurs semaines, création des différentes parties et connaissances de bases dans un projet Symfony telles que les contrôleurs, les entités, les formulaires, Data Fixtures et le CRUD.', 'background-coffee2-663bcf5b9d6ed280331437.jpg', 'photo de café', '4 mois (à améliorer)', 'https://test.com', 'https://github.com/DuDuch23/CoffeeShop', 'apercu-coffeeshop-663bcf5b9e449673748631.png'),
 (14, 71, 'PoesieInspire', 'Il s\'agit d\'un projet de BTS blanc, un POC, à réaliser en 4 heures afin de tester nos compétences et nos connaissances acquises avec le framework Symfony.', 'poesie-664650f22aa6f436616759.png', 'poesie', '4h', 'https://test.com', 'https://github.com/DuDuch23/PoesieInspire', 'apercu-poesieinspire-664650f22c3fd532771523.png'),
 (15, 71, 'Agence EFIC', 'Durant mon stage de deuxième année de BTS SIO, j\'ai été assigné à une tâche, celle de m\'occuper du site vitrine de l\'entreprise. Je devais le mettre à jour, le rendre plus élégant, en quelque sorte l\'entretenir durant toute la durée de mon stage.', 'e-commerce-664687b052a68115050223.png', 'logo e commerce', '2 mois', 'https://agence-efic.fr/', 'https://pasdelien.com', 'apercu-siteefic-664687b0533da693129379.png'),
-(16, 71, 'MathIndex', 'Il s\'agit de notre projet de fin d\'année de BTS SIO. Notre objectif était de développer un site d\'hébergement d\'exercices de mathématiques en ligne sous le framework Symfony. Chaque utilisateur pouvait rechercher, soumettre et télécharger des exercices. Il y a également une page pour les administrateurs regroupant toutes les données administrables.', 'formule-66468a1cc8f4f748092971.png', 'logo mathématique', '3 mois', 'https://test.com', 'https://github.com/DuDuch23/MathIndex', 'apercu-mathindex-66468a1cc999e196495621.png');
+(16, 71, 'MathIndex', 'Il s\'agit de notre projet de fin d\'année de BTS SIO. Notre objectif était de développer un site d\'hébergement d\'exercices de mathématiques en ligne sous le framework Symfony. Chaque utilisateur pouvait rechercher, soumettre et télécharger des exercices. Il y a également une page pour les administrateurs regroupant toutes les données administrables.', 'formule-66468a1cc8f4f748092971.png', 'logo mathématique', '3 mois', 'https://test.com', 'https://github.com/DuDuch23/MathIndex', 'apercu-mathindex-66468a1cc999e196495621.png'),
+(17, 71, 'Travel Agency', 'C\'est un site vitrine des plus basique développé en html et css. Ce projet provient de ma certification Udemy pour apprendre les bases du html et css.', 'voyage-664d1f57b1bea581785331.png', 'voyage', '30 min', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/Travel-Agency', 'apercu-travel-agency-664d1f57b3654693148271.png'),
+(18, 73, 'Snake', 'Ceci est un représentation du célèbre jeu Snake programmé en JavaScript orientée objet. Le but de ce projet était de comprendre la programmation orientée objet, la manipulation du DOM et la gestion des évènements utilisateurs.', 'serpent-664d200d3683c109998546.png', 'serpent', '4h', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/Javascript', 'apercu-snake-664d200d37370608711429.png'),
+(19, 79, 'Top 5 des meilleurs actrices', 'Ceci est en projet en lien avec ma formation Udemy. C\'est un projet réalisé avec Jquery, permettant de rendre le site dynamique, créer une interface utilisateur dynamique.', 'chaise-664d210d77a5a223097927.png', 'film', '3.5h', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/ProjetJquery', 'apercu-top-5-664d210d784a8307602446.png'),
+(20, 80, 'Cv en ligne', 'Ceci est un projet issue de ma formation Udemy, pour apprendre à créer un cv en ligne grâce à la bibliothèque Bootstrap.', 'cv-664d218495abd949555735.png', 'cv', '5h', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/ProjetBootstrap', 'apercu-cv-ligne-664d218496943818207160.png'),
+(21, 79, 'Formulaire de contact dynamique', 'Ce projet issue de ma formation Udemy, m\'a permis de me familiariser avec la création de contenu dynamique grâce à Jquery. Ceci est un formulaire de contact dynamique, sans avoir à recharger la page.', 'courriel-de-contact-664d22383dc57255757744.png', 'contact', '6.5h', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/ProjetPhp', 'apercu-formulaire-contact-664d22383e94c944103528.png'),
+(22, 74, 'Burger Code', 'Ce dernier projet de ma formation Udemy, est un projet complet regroupé la totalité de ce qu\'il y a été appris durant cette formation. Le but était de créer un site de fast food, dynamique, responsive et affichant tout le stock de produits. Burger code contient également une interface administratrice.', 'burger-664d22f2ed21e508078305.png', 'burger', '6.5h', 'https://test.com', 'https://github.com/DuDuch23/Travel-Agency/tree/main/BurgerCode', 'apercu-burger-code-664d22f2edaa0862185068.png');
 
 -- --------------------------------------------------------
 
@@ -169,7 +175,10 @@ INSERT INTO `techno` (`id`, `nom`, `image_name_techno`) VALUES
 (74, 'php', 'php.png'),
 (75, 'symfony', 'symfony.png'),
 (76, 'c#', 'csharp.jpg'),
-(77, 'python', 'python.png');
+(77, 'python', 'python.png'),
+(79, 'jquery', 'jquery.png'),
+(80, 'bootstrap', 'bootstrap.svg'),
+(81, 'tailwind', 'tailwind.png');
 
 -- --------------------------------------------------------
 
@@ -191,10 +200,13 @@ CREATE TABLE `timeline` (
 --
 
 INSERT INTO `timeline` (`id`, `techno_nom_id`, `date`, `description`, `alt`, `techno_image_id`) VALUES
-(1, 74, '2024-05-03', 'blabla', 'html', 0),
-(2, 74, '2024-05-03', 'blabla', 'css', 0),
-(3, 77, '2024-05-03', 'blabla', 'js', 0),
-(4, 73, '2024-05-03', 'blabla', 'html', 0);
+(1, 71, '2020-09-01', 'J\'ai commencé à apprendre les bases du HTML en classe de seconde, puis j\'ai eu l\'occasion de les mettre en pratique dès la première année de mon BTS SIO.', 'html', 71),
+(2, 72, '2020-09-01', 'J\'ai commencé à apprendre les bases du css lorsque j\'ai intégré ma première année de bts sio, puis j\'ai eu l\'occasion de les mettre en pratique dès la première année dans tout mes projets.', 'css', 0),
+(3, 73, '2022-09-01', 'J\'ai appris le Javascript sur internet et grâce à des formations pour les mettres en pratique dans différents projets.', 'js', 0),
+(4, 76, '2022-10-01', 'blabla', 'csharp', 0),
+(6, 74, '2023-01-01', 'L\'apprentissage du php a débuté par un projet de fin d\'année.', 'php', 0),
+(7, 75, '2023-11-01', 'L\'apprentissage du symfony a débuté après l\'apprentissage du php orienté objet (POO). Pour ensuite déboucher sur un projet symfony (le projet CoffeeShop)', 'symfony', 0),
+(8, 81, '2024-02-01', 'L\'apprentissage de la bibliothèque tailwind par le projet de fin de deuxième année et sur le portfolio en version symfony.', 'tailwind', 0);
 
 -- --------------------------------------------------------
 
@@ -311,19 +323,19 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `techno`
 --
 ALTER TABLE `techno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT pour la table `timeline`
 --
 ALTER TABLE `timeline`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `user`
