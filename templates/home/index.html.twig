@@ -23,12 +23,27 @@
             </div>
             {% endif %}
             <div id="container-text" class="grid">
+            <div id="container-text" class="grid">
                 <p class="presentation-text">Bienvenue</p>
                 <p class="presentation-text">Vous êtes sur le portfolio de : </p>
                 <p id="nom-prenom">Duchemin Alexandre</p>
                 <p class="presentation-text">Futur Développeur Full Stack Junior</p>
                 <p class="presentation-text">En BTS SIO (Services Informatiques aux Organisations) à Saint-Vincent de Senlis</p>
             </div>
+                <a class="btn h-1/4 text-center block" href="{{ path('file', { 'filename': 'CV-Alexandre-Duchemin.pdf' }) }}" target="_blank">Télécharger mon cv</a>
+        </div>
+    </div>
+</section>
+
+<section id="bloc-certification" class="flex justify-center">
+    <div class="wrapper">
+        <div class="titre">
+            <h1>Mes certifications</h1>
+        </div>
+        <div class="content-certifications mt-32 flex">
+            <a href="{{ path('file', { 'filename': 'certification-udemy-apprendre-a-coder.pdf' }) }}" target="_blank">
+                <img src="{{ asset('images/certifications/image_certification_udemy_apprendre_a_coder.PNG') }}">
+            </a>
                 <a class="btn h-1/4 text-center block " href="/public/fichiers/CV-Alexandre-Duchemin.pdf" download="CV_Alexandre_Duchemin.pdf">Télécharger mon cv</a>
         </div>
     </div>
