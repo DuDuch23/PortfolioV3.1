@@ -1,3 +1,66 @@
+body{
+    .content-site{
+        header{
+            position: fixed;
+            top: 0;
+            z-index: 3;
+        }
+
+        #bloc-accueil{
+            display: flex;
+            justify-content: center;
+        }
+
+        #bloc-certification{
+            display: flex;
+            justify-content: center;
+        }
+
+        #bloc-projets{
+            display: flex;
+            justify-content: center;
+        }
+
+        #bloc-timeline{
+            display: flex;
+            justify-content: center;
+        }
+
+        #bloc-contact{
+            display: flex;
+            justify-content: center;
+
+            .wrapper{
+                margin: 40px 0;
+                max-width: 1300px;
+                padding: 40px 20px;
+                width: 100%;
+
+                .titre{
+                    border: 2px solid;
+                    box-shadow: -10px 10px 9px -6px;
+                    display: flex;
+                    font-family: EB Garamond;
+                    font-size: 40px;
+                    justify-content: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-left: 18px;
+                    padding-right: 18px;
+                    position: relative;
+                    width: 80%;
+                }
+
+                .content-form-contact{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
 .img-pdp{
     width: 150px;
     height: 240px;
@@ -326,4 +389,45 @@ button[name="contact"]{
     20%, 60%, 100%{
         transform: translateY(8px);
     }
+}
+
+// Pour tablette et mobile
+@media screen and (max-width: 1280px) {
+
+}
+
+// Pour tablette
+@media screen and (max-width: 1280px) and (min-width: 745px) {
+    body{
+        .content-site{
+            header{
+
+            }
+
+            #bloc-accueil{
+
+            }
+
+            #bloc-certification{
+
+            }
+
+            #bloc-projets{
+
+            }
+
+            #bloc-timeline{
+
+            }
+
+            #bloc-contact{
+
+            }
+        }
+    }
+}
+
+// Pour mobile
+@media screen and (max-width: 744px) {
+    
 }
